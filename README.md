@@ -107,7 +107,7 @@ This document is organized into sections based on functional areas of the platfo
 | `FEATURE_ENABLE_AGENT_ASSIST_WORKSPACE_WHITELIST` | Enable Agent Assist Workspace whitelist | | | | Not set | |
 | `FEATURE_ENABLE_AGENT_ASSIST_WORKSPACE_GENESYS_CREDENTIALS_WHITELIST` | Enable Agent Assist Workspace Genesys credentials whitelist | | | | Not set | |
 
-# Additional Settings
+# Secondary Configuration (Additional Settings)
 
 ## Integration Settings
 
@@ -144,124 +144,124 @@ This document is organized into sections based on functional areas of the platfo
 
 | Setting Name | Description | Team Responsible | Hard Limit | Soft Limit | Default Value | Notes |
 |:-------------|:-------------|:------------------|:------------|:------------|:--------------|:-------|
-| ALEXA_END_SESSION_AFTER_EACH_REPLY | Whether to end Alexa session after each reply | | | | "true" | |
-| FEATURE_ENABLE_HANDOVER_SETTINGS_FOR_VG2 | Enable handover settings in VG2 Endpoint | | | | "true" | |
-| cognigyVoicegatewayClientSecret.token | Client secret for Voice Gateway integration | | | | Random 64 character string | Should match client secret in VG cluster |
-| VG_WEBAPP_ACCESS_WHITELIST | Whitelist of OrgIDs for VG WebApp access | | | | Not set | Use * for all OrgIDs |
+| `ALEXA_END_SESSION_AFTER_EACH_REPLY` | Whether to end Alexa session after each reply | | | | `"true"` | |
+| `FEATURE_ENABLE_HANDOVER_SETTINGS_FOR_VG2` | Enable handover settings in VG2 Endpoint | | | | `"true"` | |
+| `cognigyVoicegatewayClientSecret.token` | Client secret for Voice Gateway integration | | | | Random 64 character string | Should match client secret in VG cluster |
+| `VG_WEBAPP_ACCESS_WHITELIST` | Whitelist of OrgIDs for VG WebApp access | | | | Not set | Use `"*"` for all OrgIDs |
 
 ## Management UI Configuration
 
 | Setting Name | Description | Team Responsible | Hard Limit | Soft Limit | Default Value | Notes |
 |:-------------|:-------------|:------------------|:------------|:------------|:--------------|:-------|
-| managementUi.enabled | Install Management UI on the cluster | | | | false | Not required if API endpoint is accessible from internet |
-| managementUi.ingress.enabled | Enable ingress for Management UI | | | | true | |
-| managementUi.image | Management UI Docker image | | | | "cognigy.azurecr.io/management-ui:release-bfcc652906-1742991638" | |
-| managementUi.replicaCount | Number of Management UI replicas | | | | 1 | |
-| managementUiCredentials | Credentials for Management UI | | | | "[]" | JSON array of username/password objects |
+| `managementUi.enabled` | Install Management UI on the cluster | | | | `false` | Not required if API endpoint is accessible from internet |
+| `managementUi.ingress.enabled` | Enable ingress for Management UI | | | | `true` | |
+| `managementUi.image` | Management UI Docker image | | | | `"cognigy.azurecr.io/management-ui:release-bfcc652906-1742991638"` | |
+| `managementUi.replicaCount` | Number of Management UI replicas | | | | `1` | |
+| `managementUiCredentials` | Credentials for Management UI | | | | `"[]"` | JSON array of username/password objects |
 
 ## Security & Authentication
 
 | Setting Name | Description | Team Responsible | Hard Limit | Soft Limit | Default Value | Notes |
 |:-------------|:-------------|:------------------|:------------|:------------|:--------------|:-------|
-| commonSecrets.cognigyJwt.token | JWT secret for signing tokens | | | | Random 128 character string | Used for realtime tokens |
-| commonSecrets.cognigyOauthClientSecret.token | OAuth Client Secret | | | | Random 64 character string | |
-| commonSecrets.cognigyServiceEndpointApiAccessToken.token | Service Endpoint API access token | | | | Random 16 character string | |
-| commonSecrets.cognigyServiceHandoverApiAccessToken.token | Service Handover API access token | | | | Random 16 character string | |
-| commonSecrets.cognigySearchOrchestratorApiKey.token | Search Orchestrator API key | | | | Random 16 character string | |
-| commonSecrets.cognigySecureFormsApiKey.token | Secure Forms API key | | | | "" | |
-| OAUTH_CLIENT_ID | OAuth client ID | | | | "cognigy-ui" | |
-| CLIENT_ID_COGNIGY_VOICE_GATEWAY | Voice Gateway client ID | | | | "voicegateway" | |
-| CLIENT_ID_COGNIGY_LIVE_AGENT | Live Agent client ID | | | | "cognigy-live-agent" | |
+| `commonSecrets.cognigyJwt.token` | JWT secret for signing tokens | | | | Random 128 character string | Used for realtime tokens |
+| `commonSecrets.cognigyOauthClientSecret.token` | OAuth Client Secret | | | | Random 64 character string | |
+| `commonSecrets.cognigyServiceEndpointApiAccessToken.token` | Service Endpoint API access token | | | | Random 16 character string | |
+| `commonSecrets.cognigyServiceHandoverApiAccessToken.token` | Service Handover API access token | | | | Random 16 character string | |
+| `commonSecrets.cognigySearchOrchestratorApiKey.token` | Search Orchestrator API key | | | | Random 16 character string | |
+| `commonSecrets.cognigySecureFormsApiKey.token` | Secure Forms API key | | | | `""` | |
+| `OAUTH_CLIENT_ID` | OAuth client ID | | | | `"cognigy-ui"` | |
+| `CLIENT_ID_COGNIGY_VOICE_GATEWAY` | Voice Gateway client ID | | | | `"voicegateway"` | |
+| `CLIENT_ID_COGNIGY_LIVE_AGENT` | Live Agent client ID | | | | `"cognigy-live-agent"` | |
 
 ## Cognitive Services Configuration
 
 | Setting Name | Description | Team Responsible | Hard Limit | Soft Limit | Default Value | Notes |
 |:-------------|:-------------|:------------------|:------------|:------------|:--------------|:-------|
-| knowledgeSearch.globalAzureDocumentIntelligenceConfig.apiKey | Azure Document Intelligence API key | | | | "" | |
-| knowledgeSearch.globalAzureDocumentIntelligenceConfig.endpointUrl | Azure Document Intelligence endpoint URL | | | | "" | |
-| platformProvidedLLM.azure.resourceName | Azure OpenAI resource name | | | | "" | |
-| platformProvidedLLM.azure.deploymentName | Azure OpenAI deployment name | | | | "" | |
-| platformProvidedLLM.azure.apiVersion | Azure OpenAI API version | | | | "" | |
-| platformProvidedLLM.azure.credentials.apiKey | Azure OpenAI API key | | | | "" | |
-| NLP_PRECOMPUTED_EMBEDDINGS_PATH | Path to files with pre-computed noise embeddings | | | | "/embedding/precomputed_embeddings" | |
+| `knowledgeSearch.globalAzureDocumentIntelligenceConfig.apiKey` | Azure Document Intelligence API key | | | | `""` | |
+| `knowledgeSearch.globalAzureDocumentIntelligenceConfig.endpointUrl` | Azure Document Intelligence endpoint URL | | | | `""` | |
+| `platformProvidedLLM.azure.resourceName` | Azure OpenAI resource name | | | | `""` | |
+| `platformProvidedLLM.azure.deploymentName` | Azure OpenAI deployment name | | | | `""` | |
+| `platformProvidedLLM.azure.apiVersion` | Azure OpenAI API version | | | | `""` | |
+| `platformProvidedLLM.azure.credentials.apiKey` | Azure OpenAI API key | | | | `""` | |
+| `NLP_PRECOMPUTED_EMBEDDINGS_PATH` | Path to files with pre-computed noise embeddings | | | | `"/embedding/precomputed_embeddings"` | |
 
 ## Live Agent Configuration
 
 | Setting Name | Description | Team Responsible | Hard Limit | Soft Limit | Default Value | Notes |
 |:-------------|:-------------|:------------------|:------------|:------------|:--------------|:-------|
-| cognigyLiveAgent.platformToken | API token for Live Agent | | | | Random 24 character string | |
-| FEATURE_USE_COGNIGY_LIVE_AGENT | Activate Cognigy Live Agent | | | | Not set | |
-| CLIENT_SECRET_COGNIGY_LIVE_AGENT | Client secret for Live Agent | | | | Not set | |
-| REDIRECT_URI_COGNIGY_LIVE_AGENT | Redirect URI for Live Agent | | | | Not set | |
-| CLIENT_ID_COGNIGY_LIVE_AGENT | Client ID for Live Agent | | | | Not set | |
-| LIVE_AGENT_BACKEND_BASE_URL_WITH_PROTOCOL | Base URL for Live Agent backend | | | | Not set | |
-| LIVE_AGENT_API_CORS_WHITELIST | CORS whitelist for Live Agent API | | | | Not set | |
-| LIVE_AGENT_API_SECRET | Live Agent API secret | | | | Not set | |
-| LIVE_AGENT_TOKEN_TTL_IN_SECONDS | TTL for Live Agent JWT and access token | | | | Not set | |
-| FEATURE_USE_COGNIGY_LIVE_AGENT_DASHBOARD | Activate Live Agent Dashboard | | | | Not set | |
+| `cognigyLiveAgent.platformToken` | API token for Live Agent | | | | Random 24 character string | |
+| `FEATURE_USE_COGNIGY_LIVE_AGENT` | Activate Cognigy Live Agent | | | | Not set | |
+| `CLIENT_SECRET_COGNIGY_LIVE_AGENT` | Client secret for Live Agent | | | | Not set | |
+| `REDIRECT_URI_COGNIGY_LIVE_AGENT` | Redirect URI for Live Agent | | | | Not set | |
+| `CLIENT_ID_COGNIGY_LIVE_AGENT` | Client ID for Live Agent | | | | Not set | |
+| `LIVE_AGENT_BACKEND_BASE_URL_WITH_PROTOCOL` | Base URL for Live Agent backend | | | | Not set | |
+| `LIVE_AGENT_API_CORS_WHITELIST` | CORS whitelist for Live Agent API | | | | Not set | |
+| `LIVE_AGENT_API_SECRET` | Live Agent API secret | | | | Not set | |
+| `LIVE_AGENT_TOKEN_TTL_IN_SECONDS` | TTL for Live Agent JWT and access token | | | | Not set | |
+| `FEATURE_USE_COGNIGY_LIVE_AGENT_DASHBOARD` | Activate Live Agent Dashboard | | | | Not set | |
 
 ## Monitoring & Metrics
 
 | Setting Name | Description | Team Responsible | Hard Limit | Soft Limit | Default Value | Notes |
 |:-------------|:-------------|:------------------|:------------|:------------|:--------------|:-------|
-| MONITOR_RPC_CALLS | Enable metrics collection for RPC calls | | | | "true" | Consumed by service-monitoring |
-| FEATURE_RPC_LOGS | Enable detailed logs for RPC calls handling | | | | Not set | |
-| RPC_TIMEOUT_GET_NLU_RESULTS_IN_MS | Timeout for 'getNluResultsRpc' call | | | | "5000" | |
-| CREATE_RUNTIME_FILE_TIMEOUT_IN_SECONDS | RPC timeout for creating runtime file in seconds | | | | Not set | Default is 8 seconds |
+| `MONITOR_RPC_CALLS` | Enable metrics collection for RPC calls | | | | `"true"` | Consumed by service-monitoring |
+| `FEATURE_RPC_LOGS` | Enable detailed logs for RPC calls handling | | | | Not set | |
+| `RPC_TIMEOUT_GET_NLU_RESULTS_IN_MS` | Timeout for 'getNluResultsRpc' call | | | | `"5000"` | |
+| `CREATE_RUNTIME_FILE_TIMEOUT_IN_SECONDS` | RPC timeout for creating runtime file in seconds | | | | Not set | Default is 8 seconds |
 
 ## Network Rate Limits
 
 | Setting Name | Description | Team Responsible | Hard Limit | Soft Limit | Default Value | Notes |
 |:-------------|:-------------|:------------------|:------------|:------------|:--------------|:-------|
-| API Rate Limit | Maximum number of requests from a single IP address | | | | 1000 requests per 5 minutes | Applies only to shared SaaS environments |
+| `API Rate Limit` | Maximum number of requests from a single IP address | | | | `1000 requests per 5 minutes` | Applies only to shared SaaS environments |
 
 ## NLU and Training Limits
 
 | Setting Name | Description | Team Responsible | Hard Limit | Soft Limit | Default Value | Notes |
 |:-------------|:-------------|:------------------|:------------|:------------|:--------------|:-------|
-| Maximum Example Sentences per Intent | Number of example sentences allowed for a single Intent | | | | 200 | |
-| Maximum Total Example Sentences | Total number of example sentences across all Intents including Attached Flows | | | | 10,000 (15,000 in Trial) | |
-| Maximum Total Intents | Total number of Intents across all Flows including Attached Flows | | | | 2,500 (10,000 in Trial) | |
-| Maximum Intent Training Time | Maximum time an Intent-Training task is allowed to run | | | | 10 minutes | |
-| Maximum Intent Trainer Upload Size | Maximum file size for uploading Intent Trainer records | | | | 100 MB | |
-| Maximum Intent Trainer Record Storage | Maximum time Intent Trainer records are stored | | | | 10 days | |
+| `Maximum Example Sentences per Intent` | Number of example sentences allowed for a single Intent | | | | `200` | |
+| `Maximum Total Example Sentences` | Total number of example sentences across all Intents including Attached Flows | | | | `10,000` (`15,000` in Trial) | |
+| `Maximum Total Intents` | Total number of Intents across all Flows including Attached Flows | | | | `2,500` (`10,000` in Trial) | |
+| `Maximum Intent Training Time` | Maximum time an Intent-Training task is allowed to run | | | | `10 minutes` | |
+| `Maximum Intent Trainer Upload Size` | Maximum file size for uploading Intent Trainer records | | | | `100 MB` | |
+| `Maximum Intent Trainer Record Storage` | Maximum time Intent Trainer records are stored | | | | `10 days` | |
 
 ## Flow Execution and Code Limits
 
 | Setting Name | Description | Team Responsible | Hard Limit | Soft Limit | Default Value | Notes |
 |:-------------|:-------------|:------------------|:------------|:------------|:--------------|:-------|
-| Maximum Code Execution Time | Maximum execution time in Code Node | | | | 1 second | |
-| Maximum Character Count in Code Editor | Maximum number of characters in the code editor | | | | 200,000 | |
-| Maximum API Calls per Code Node | Maximum number of API calls from a single Code Node | | | | 100 | |
-| Maximum Flow Loop Protection | Maximum number of times a Flow can execute the same Path for a single user message | | | | 4 | Before "Infinite Loop protection" is triggered |
-| Maximum Undo/Redo Operations | Maximum number of undo/redo operations stored per user in Flow Editor | | | | 5 | |
+| `Maximum Code Execution Time` | Maximum execution time in Code Node | | | | `1 second` | |
+| `Maximum Character Count in Code Editor` | Maximum number of characters in the code editor | | | | `200,000` | |
+| `Maximum API Calls per Code Node` | Maximum number of API calls from a single Code Node | | | | `100` | |
+| `Maximum Flow Loop Protection` | Maximum number of times a Flow can execute the same Path for a single user message | | | | `4` | Before "Infinite Loop protection" is triggered |
+| `Maximum Undo/Redo Operations` | Maximum number of undo/redo operations stored per user in Flow Editor | | | | `5` | |
 
 ## Transformer Limits
 
 | Setting Name | Description | Team Responsible | Hard Limit | Soft Limit | Default Value | Notes |
 |:-------------|:-------------|:------------------|:------------|:------------|:--------------|:-------|
-| Maximum Transformer HTTP Requests | Maximum number of HTTP requests from a Transformer | | | | 1 (2 in Trial) | |
-| Maximum Transformer Execution Time | Maximum execution time for a Transformer | | | | 5 seconds | |
+| `Maximum Transformer HTTP Requests` | Maximum number of HTTP requests from a Transformer | | | | `1` (`2` in Trial) | |
+| `Maximum Transformer Execution Time` | Maximum execution time for a Transformer | | | | `5 seconds` | |
 
 ## Email (SMTP Node) Limits
 
 | Setting Name | Description | Team Responsible | Hard Limit | Soft Limit | Default Value | Notes |
 |:-------------|:-------------|:------------------|:------------|:------------|:--------------|:-------|
-| Maximum Email Retry Attempts | Maximum number of times the system retries to send an outbound Email | | | | 3 | |
-| Maximum Email Attachment Size | Maximum size of an Email attachment | | | | 10 MB | |
+| `Maximum Email Retry Attempts` | Maximum number of times the system retries to send an outbound Email | | | | `3` | |
+| `Maximum Email Attachment Size` | Maximum size of an Email attachment | | | | `10 MB` | |
 
 ## Data Retention Periods
 
 | Description | Default Value | Notes |
 |:------------|:--------------|:-------|
-| Log-Line retention | 1 day | Maximum time until a Log-Line on the product's Log page will be removed |
-| Flow-execution session retention | 30 days | Maximum time until relevant Flow-execution session information will be removed |
-| Contact Profile retention | 30 days | Maximum time until a Contact Profile which has not been read or modified will be removed |
-| Conversation transcript retention | 30 days | Maximum time until Conversation transcripts will be removed |
-| Intent Trainer record retention | 10 days | Maximum time Intent Trainer records are stored in the database |
-| Audit event retention | 30 days | Maximum time until audit events will be removed |
-| xApp Session retention | 30 days | Maximum time until an xApp Session will be expired |
-| PCAP File retention (Voice Gateway) | 14 days | Maximum time until a PCAP File will be removed |
+| Log-Line retention | `1 day` | Maximum time until a Log-Line on the product's Log page will be removed |
+| Flow-execution session retention | `30 days` | Maximum time until relevant Flow-execution session information will be removed |
+| Contact Profile retention | `30 days` | Maximum time until a Contact Profile which has not been read or modified will be removed |
+| Conversation transcript retention | `30 days` | Maximum time until Conversation transcripts will be removed |
+| Intent Trainer record retention | `10 days` | Maximum time Intent Trainer records are stored in the database |
+| Audit event retention | `30 days` | Maximum time until audit events will be removed |
+| xApp Session retention | `30 days` | Maximum time until an xApp Session will be expired |
+| PCAP File retention (Voice Gateway) | `14 days` | Maximum time until a PCAP File will be removed |
 
 ## Internal notes
 
